@@ -30,7 +30,7 @@ public class Main : MonoBehaviour {
             // Pick one from the possibilities in powerUpFrequency
             
             int ndx = Random.Range(0, powerUpFrequency.Length);
-            WeaponType puType = powerUpFrequency[5];
+            WeaponType puType = powerUpFrequency[ndx];
             // Spawn a PowerUp
             GameObject go = Instantiate(prefabPowerUp) as GameObject;
             PowerUp pu = go.GetComponent<PowerUp>();
