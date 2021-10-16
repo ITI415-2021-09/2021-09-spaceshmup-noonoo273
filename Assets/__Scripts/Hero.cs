@@ -22,6 +22,8 @@ public class Hero : MonoBehaviour {
     // This variable holds a reference to the last triggering GameObject
     private GameObject lastTriggerGo = null;
 
+    private LineRenderer laserLine;
+
     // Declare a new delegate type WeaponFireDelegate
     public delegate void WeaponFireDelegate();
     // Create a WeaponFireDelegate field named fireDelegate.

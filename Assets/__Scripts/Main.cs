@@ -16,7 +16,7 @@ public class Main : MonoBehaviour {
     public GameObject prefabPowerUp;
     public WeaponType[] powerUpFrequency = new WeaponType[]
     {
-        WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield
+        WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield, WeaponType.laser
     };
 
     private BoundsCheck bndCheck;
@@ -28,8 +28,9 @@ public class Main : MonoBehaviour {
         {
             // Choose which PowerUp to pick
             // Pick one from the possibilities in powerUpFrequency
+            
             int ndx = Random.Range(0, powerUpFrequency.Length);
-            WeaponType puType = powerUpFrequency[ndx];
+            WeaponType puType = powerUpFrequency[5];
             // Spawn a PowerUp
             GameObject go = Instantiate(prefabPowerUp) as GameObject;
             PowerUp pu = go.GetComponent<PowerUp>();

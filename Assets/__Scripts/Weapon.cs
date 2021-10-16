@@ -46,6 +46,7 @@ public class Weapon : MonoBehaviour {
     public GameObject collar;
     public float lastShotTime; // Time last shot was fired
     private Renderer collarRend;
+    private object projectileColor;
 
     private void Start()
     {
@@ -120,6 +121,7 @@ public class Weapon : MonoBehaviour {
             case WeaponType.blaster:
                 p = MakeProjectile();
                 p.rigid.velocity = vel;
+                projectileColor = Color.blue;
                 break;
 
             case WeaponType.spread:
@@ -131,6 +133,13 @@ public class Weapon : MonoBehaviour {
                 p = MakeProjectile(); // Make left Projectile
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
                 p.rigid.velocity = p.transform.rotation * vel;
+                projectileColor = Color.green;
+                break;
+
+            case WeaponType.laser:
+                p = MakeProjectile();
+                p.rigid.velocity = vel;
+                projectileColor = Color.red;
                 break;
         }
     }
